@@ -5,8 +5,8 @@ Created on Mon Jan 25 16:52:33 2021
 @author: rimes
 """
 
-import Dice
+import baseDice
 
-class greenDie(Dice):
+class greenDie(baseDice):
     def __init__(self):
         self.faces = ["footstep", "shotgun", "brains", "footstep", "brains", "brains"]

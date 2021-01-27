@@ -11,7 +11,6 @@ import Turn
 
 class Zombie(ABC):
     def __init__(self):
-        self.footsteps = 0
         self.shotguns = 0
         self.brains = 0
         self.turn = Turn()

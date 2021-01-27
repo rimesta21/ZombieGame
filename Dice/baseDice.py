@@ -6,11 +6,10 @@ Created on Mon Jan 25 16:39:16 2021
 """
 
 
-from abs import ABC
 import random
 
 
-class Dice(ABC):
+class baseDice():
     def __init__(self):
         self.faces = {}
         
