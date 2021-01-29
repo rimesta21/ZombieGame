@@ -10,8 +10,8 @@ import random
 
 
 class baseDice():
-    def __init__(self):
-        self.faces = {}
+    def __init__(self, faces):
+        self.faces = faces
         
     def getFace(self):
-        return self.faces[random.randint(0, 6)]
+        return self.faces[random.randint(0, 5)]

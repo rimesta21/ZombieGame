@@ -6,8 +6,8 @@ Created on Mon Jan 25 16:30:10 2021
 """
 
 
-from abc import ABC, abstractmethod
-import Turn
+from abc import ABC
+from Zombies.Turn import Turn
 
 class Zombie(ABC):
     def __init__(self):

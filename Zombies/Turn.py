@@ -6,16 +6,18 @@ Created on Mon Jan 25 16:34:28 2021
 """
 
 import random
-from Dice import redDie, yellowDie, greenDie
+from Dice.greenDie import greenDie
+from Dice.redDie import redDie
+from Dice.yellowDie import yellowDie
 
 class Turn:
         
     def __init__(self):
         self.cup = {"red" : 3, "yellow" : 3, "green" : 3}
         self.onHand = []
-             
+                    
         
-    def getDice(self, diceNum):
+    def getDice(self):
         while len(self.onHand) <= 3:
             color = list(self.cup.keys())[random.randint(0,2)]
             if(self.cup[color] != 0):
