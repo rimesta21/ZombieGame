@@ -10,5 +10,6 @@ from Zombies.randomZombie import randomZombie
 if __name__ == "__main__":
     randZombie = randomZombie()
     print(randZombie.takeTurn())
+    randZombie.printInfo()
 
     

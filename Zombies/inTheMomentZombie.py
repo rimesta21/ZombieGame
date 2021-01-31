@@ -9,17 +9,21 @@ Created on Sat Jan 30 16:15:41 2021
 from Zombies.Zombie import Zombie
 import random
 
-class inTheMomementZombie(Zombie):
+class inTheMomentZombie(Zombie):
     def __init__(self):
         super().__init__()
         self.numTimes = random.randint(1,4)
         
     def takeTurn(self):
+        print("In the Moment Zombie is up.")
         i = 0
         while i < self.numTimes and self.shotguns < 2:
+            if not self.firstRoll:
+                print("In the Moment Shotgun Zombie decides to go again!")
+            self.firstRoll = False
             i += 1
             self.turn.getDice()
-            result = self.turn.rollDice()
+            result = self.turn.rollDice("In the Moment Zombie")
             for i in result:
                 if i == "shotgun":
                     self.shotgun += 1
@@ -27,11 +31,11 @@ class inTheMomementZombie(Zombie):
                         self.shotgun = 0
                         self.firstRoll = True
                         self.brains = 0
+                        print("Looks like In the Moment Zombie is unlucky.")
                         return 0
                 else:
                     self.brains += 1
-            
-        self.shotgun = 0
-        self.brains, temp = 0, self.brains 
+        print("In the Moment Zombie decided not to go again.")
+        temp = self.reset()
         self.numTimes = random.randint(1,4)
         return temp

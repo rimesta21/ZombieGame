@@ -18,25 +18,31 @@ class Turn:
                     
         
     def getDice(self):
-        while len(self.onHand) <= 3:
+        while len(self.onHand) < 3:
             color = list(self.cup.keys())[random.randint(0,2)]
             if(self.cup[color] != 0):
                 self.cup[color] -= 1
                 self.onHand.append(color)
     
-    def rollDice(self):
+    def rollDice(self, zombie):
         result = []
-        for i in self.onHand:
+        temp = list(self.onHand)
+        for i in temp:
             if i == "red":
                 die = redDie()
             elif i == "yellow":
                 die = yellowDie()
             else:
                 die = greenDie()
-                
             face = die.getFace()
+            print(zombie + " got a " + i + " die and rolled " + face + ".")
             if face != "footstep":
                 self.onHand.remove(i)
-                result.append(i)
-                
+                result.append(face)
         return result
+                
+    def reset(self):
+        self.cup = {"red" : 3, "yellow" : 3, "green" : 3}
+        self.onHand = []
+                
+        

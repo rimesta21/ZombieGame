@@ -13,9 +13,13 @@ class carefulZombie(Zombie):
         super().__init__()
         
     def takeTurn(self):
+        print("Careful Zombie is up.")
         while self.shotguns <= self.brains:
+            if not self.firstRoll:
+                print("Careful Zombie decides to go again!") 
+            self.firstRoll = False
             self.turn.getDice()
-            result = self.turn.rollDice()
+            result = self.turn.rollDice("Careful Zombie")
             for i in result:
                 if i == "shotgun":
                     self.shotgun += 1
@@ -23,9 +27,10 @@ class carefulZombie(Zombie):
                         self.shotgun = 0
                         self.firstRoll = True
                         self.brains = 0
+                        print("Looks like Careful Zombie is unlucky.")
                         return 0
                 else:
                     self.brains += 1
-        self.shotgun = 0
-        self.brains, temp = 0, self.brains 
+        print("Careful Zombie decided not to go again.")
+        temp = self.reset()
         return temp
