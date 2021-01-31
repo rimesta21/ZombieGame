@@ -9,6 +9,6 @@ from Zombies.randomZombie import randomZombie
 
 if __name__ == "__main__":
     randZombie = randomZombie()
-    randZombie.takeTurn()
-    print(randZombie.brains)
+    print(randZombie.takeTurn())
+
     

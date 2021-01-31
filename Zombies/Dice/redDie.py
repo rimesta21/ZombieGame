@@ -6,7 +6,7 @@ Created on Mon Jan 25 16:41:38 2021
 """
 
 
-from Dice.baseDice import baseDice
+from Zombies.Dice.baseDice import baseDice
 
 class redDie(baseDice):
     def __init__(self):

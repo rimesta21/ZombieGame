@@ -6,9 +6,9 @@ Created on Mon Jan 25 16:34:28 2021
 """
 
 import random
-from Dice.greenDie import greenDie
-from Dice.redDie import redDie
-from Dice.yellowDie import yellowDie
+from Zombies.Dice.greenDie import greenDie
+from Zombies.Dice.redDie import redDie
+from Zombies.Dice.yellowDie import yellowDie
 
 class Turn:
         

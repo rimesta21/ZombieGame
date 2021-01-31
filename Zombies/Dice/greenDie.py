@@ -5,7 +5,7 @@ Created on Mon Jan 25 16:52:33 2021
 @author: rimes
 """
 
-from Dice.baseDice import baseDice
+from Zombies.Dice.baseDice import baseDice
 
 class greenDie(baseDice):
     def __init__(self):

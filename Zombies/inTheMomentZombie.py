@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jan 27 23:51:42 2021
+Created on Sat Jan 30 16:15:41 2021
 
 @author: rimes
 """
@@ -9,15 +9,15 @@ Created on Wed Jan 27 23:51:42 2021
 from Zombies.Zombie import Zombie
 import random
 
-class randomZombie(Zombie):
+class inTheMomementZombie(Zombie):
     def __init__(self):
         super().__init__()
-        self.firstRoll = True
-    
-    
+        self.numTimes = random.randint(1,4)
+        
     def takeTurn(self):
-        while self.firstRoll or random.randint(0,1) == 1:
-            self.firstRoll = False
+        i = 0
+        while i < self.numTimes and self.shotguns < 2:
+            i += 1
             self.turn.getDice()
             result = self.turn.rollDice()
             for i in result:
@@ -30,10 +30,8 @@ class randomZombie(Zombie):
                         return 0
                 else:
                     self.brains += 1
-        self.firstRoll = True
+            
         self.shotgun = 0
         self.brains, temp = 0, self.brains 
+        self.numTimes = random.randint(1,4)
         return temp
-            
-            
-            
