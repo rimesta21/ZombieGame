@@ -11,10 +11,11 @@ from Zombies.Zombie import Zombie
 class carefulZombie(Zombie):
     def __init__(self):
         super().__init__()
+        self.name = "Careful Zombie"
         
     def takeTurn(self):
         print("Careful Zombie is up.")
-        while self.shotguns <= self.brains:
+        while self.shotgun <= self.brains:
             if not self.firstRoll:
                 print("Careful Zombie decides to go again!") 
             self.firstRoll = False

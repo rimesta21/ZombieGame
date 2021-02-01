@@ -15,9 +15,17 @@ class Turn:
     def __init__(self):
         self.cup = {"red" : 3, "yellow" : 3, "green" : 3}
         self.onHand = []
+        
+    def checkCup(self):
+        inCup = sum(list(self.cup.values()))
+        if inCup + len(self.onHand) < 3:
+            self.cup = {"red" : 3, "yellow" : 3, "green" : 3}
+            for i in self.onHand:
+                self.cup[i] -= 1
                     
         
     def getDice(self):
+        self.checkCup()
         while len(self.onHand) < 3:
             color = list(self.cup.keys())[random.randint(0,2)]
             if(self.cup[color] != 0):

@@ -12,6 +12,7 @@ import random
 class randomZombie(Zombie):
     def __init__(self):
         super().__init__()
+        self.name = "Random Zombie"
         
     
     def takeTurn(self):

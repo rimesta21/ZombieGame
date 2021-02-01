@@ -13,15 +13,16 @@ class inTheMomentZombie(Zombie):
     def __init__(self):
         super().__init__()
         self.numTimes = random.randint(1,4)
+        self.name = "In the Moment Zombie"
         
     def takeTurn(self):
         print("In the Moment Zombie is up.")
-        i = 0
-        while i < self.numTimes and self.shotguns < 2:
+        j = 0
+        while j < self.numTimes and self.shotgun < 2:
             if not self.firstRoll:
                 print("In the Moment Shotgun Zombie decides to go again!")
             self.firstRoll = False
-            i += 1
+            j += 1
             self.turn.getDice()
             result = self.turn.rollDice("In the Moment Zombie")
             for i in result:

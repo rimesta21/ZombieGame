@@ -11,6 +11,7 @@ from Zombies.Zombie import Zombie
 class twoBrainZombie(Zombie):
     def __init__(self):
         super().__init__()
+        self.name = "Two Brain Zombie"
         
     def takeTurn(self):
         print("Two Brain Zombie is up.")
